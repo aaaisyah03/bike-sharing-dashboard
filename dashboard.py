@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Membaca data
-data_hour = pd.read_csv('../data/hour.csv')  
-data_day = pd.read_csv('../data/day.csv')    
+data_hour = pd.read_csv('C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv')  
+data_day = pd.read_csv('C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv')    
 
 # Menghitung peminjaman sepeda per jam
 hourly_rentals = data_hour.groupby('hr')['cnt'].sum().reset_index()
