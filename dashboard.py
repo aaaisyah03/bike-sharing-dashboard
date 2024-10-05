@@ -5,13 +5,30 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Cek apakah jalur file ada
-file_path = 'C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv'
-if os.path.exists(file_path):
-    data_hour = pd.read_csv(file_path)
-    print(data_hour.head())
+file_path_hour = 'C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv'
+file_path_day = 'C:/Users/aaais/.vscode/python/dashboard/submission/data/day.csv'
+
+# Cek apakah file ada sebelum mencoba membacanya
+if os.path.exists(file_path_hour):
+    data_hour = pd.read_csv(file_path_hour)
 else:
-    print(f"File tidak ditemukan: {file_path}")
+    st.error(f"File tidak ditemukan: {file_path_hour}")
+
+if os.path.exists(file_path_day):
+    data_day = pd.read_csv(file_path_day)
+else:
+    st.error(f"File tidak ditemukan: {file_path_day}")
+
+# Jika data berhasil dimuat, tampilkan di Streamlit
+st.title("Bike Sharing Data Analysis")
+
+if 'data_hour' in locals():
+    st.write("Data Hour:")
+    st.dataframe(data_hour.head())
+
+if 'data_day' in locals():
+    st.write("Data Day:")
+    st.dataframe(data_day.head())
 
 # Membaca data
 data_hour = pd.read_csv('C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv')  
