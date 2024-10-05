@@ -5,31 +5,30 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Cek apakah file ada sebelum mencoba membacanya
-if os.path.exists(file_path_hour):
-    data_hour = pd.read_csv(file_path_hour)
-else:
-    st.error(f"File tidak ditemukan: {file_path_hour}")
+import streamlit as st
+import pandas as pd
 
-if os.path.exists(file_path_day):
-    data_day = pd.read_csv(file_path_day)
-else:
-    st.error(f"File tidak ditemukan: {file_path_day}")
+# Ganti dengan URL Raw dari GitHub
+url_hour = 'https://raw.githubusercontent.com/username/repository/branch/path/to/hour.csv'
+url_day = 'https://raw.githubusercontent.com/username/repository/branch/path/to/day.csv'
 
-# Jika data berhasil dimuat, tampilkan di Streamlit
+# Membaca data dari URL
+data_hour = pd.read_csv(url_hour)
+data_day = pd.read_csv(url_day)
+
+# Judul aplikasi Streamlit
 st.title("Bike Sharing Data Analysis")
 
-if 'data_hour' in locals():
-    st.write("Data Hour:")
-    st.dataframe(data_hour.head())
+# Tampilkan data
+st.write("Data Hour:")
+st.dataframe(data_hour.head())
 
-if 'data_day' in locals():
-    st.write("Data Day:")
-    st.dataframe(data_day.head())
+st.write("Data Day:")
+st.dataframe(data_day.head())
 
 # Membaca data
-data_hour = pd.read_csv('C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv')  
-data_day = pd.read_csv('C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv')    
+data_hour = pd.read_csv(https://raw.githubusercontent.com/username/repository/branch/path/to/hour.csv')  
+data_day = pd.read_csv('https://raw.githubusercontent.com/username/repository/branch/path/to/day.csv')    
 
 # Menghitung peminjaman sepeda per jam
 hourly_rentals = data_hour.groupby('hr')['cnt'].sum().reset_index()
