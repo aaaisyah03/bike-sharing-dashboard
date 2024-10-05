@@ -4,6 +4,14 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Cek apakah jalur file ada
+file_path = 'C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv'
+if os.path.exists(file_path):
+    data_hour = pd.read_csv(file_path)
+    print(data_hour.head())
+else:
+    print(f"File tidak ditemukan: {file_path}")
+
 # Membaca data
 data_hour = pd.read_csv('C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv')  
 data_day = pd.read_csv('C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv')    
