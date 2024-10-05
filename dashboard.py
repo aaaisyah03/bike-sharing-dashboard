@@ -123,8 +123,7 @@ st.subheader("Tabel Rata-rata Peminjaman Sepeda per Jam")
 st.table(hourly_avg_rentals)
 
 # Visualisasi Rata-rata Peminjaman Sepeda per Jam
-fig_trend_hour = px.line(hourly_avg_rentals, x='Hour', y='Average Rentals', title='Rata-rata Peminjaman Sepeda per Jam', 
-                          line_shape='linear', color='Average Rentals')
+fig_trend_hour = px.line(hourly_avg_rentals, x='Hour', y='Average Rentals', title='Rata-rata Peminjaman Sepeda per Jam', line_shape='linear')
 st.plotly_chart(fig_trend_hour)
 
 # 2. Analisis Musiman
