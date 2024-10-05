@@ -9,8 +9,8 @@ import streamlit as st
 import pandas as pd
 
 # Ganti dengan URL Raw dari GitHub
-url_hour = 'https://raw.githubusercontent.com/username/repository/branch/path/to/hour.csv'
-url_day = 'https://raw.githubusercontent.com/username/repository/branch/path/to/day.csv'
+url_hour = 'https://raw.githubusercontent.com/aaaisyah03/bike-sharing-dashboard/refs/heads/main/hour.csv'
+url_day = 'https://raw.githubusercontent.com/aaaisyah03/bike-sharing-dashboard/refs/heads/main/day.csv'
 
 # Membaca data dari URL
 data_hour = pd.read_csv(url_hour)
@@ -27,8 +27,8 @@ st.write("Data Day:")
 st.dataframe(data_day.head())
 
 # Membaca data
-data_hour = pd.read_csv(https://raw.githubusercontent.com/username/repository/branch/path/to/hour.csv')  
-data_day = pd.read_csv('https://raw.githubusercontent.com/username/repository/branch/path/to/day.csv')    
+data_hour = pd.read_csv('https://raw.githubusercontent.com/aaaisyah03/bike-sharing-dashboard/refs/heads/main/hour.csv')  
+data_day = pd.read_csv('https://raw.githubusercontent.com/aaaisyah03/bike-sharing-dashboard/refs/heads/main/day.csv')    
 
 # Menghitung peminjaman sepeda per jam
 hourly_rentals = data_hour.groupby('hr')['cnt'].sum().reset_index()
