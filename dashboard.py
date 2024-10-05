@@ -5,9 +5,6 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-file_path_hour = 'C:/Users/aaais/.vscode/python/dashboard/submission/data/hour.csv'
-file_path_day = 'C:/Users/aaais/.vscode/python/dashboard/submission/data/day.csv'
-
 # Cek apakah file ada sebelum mencoba membacanya
 if os.path.exists(file_path_hour):
     data_hour = pd.read_csv(file_path_hour)
